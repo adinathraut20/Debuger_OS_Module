@@ -1,0 +1,207 @@
+Q1)Write a script to create 10 directories, say a1,a2,...,a10
+Report error if a directory/file exists with the same name.
+==>
+
+============================================================================
+Q2)Write a menu based script to perform following string operations
+==>>
+
+a) To find length of a string
+==> echo -n abhijit | wc -m
+
+c) Copying string
+==>
+
+d) Concatenation of strings
+==>
+str1="abhi"
+str2="bhosale"
+
+if [ "str1" = "str2" ]; then
+        echo "string are equal"
+else
+        echo "strings are not equal"
+
+fi
+
+
+e) Compare two strings
+==>
+str1="abhi"
+str2="bhosale"
+cd
+if [ "str1" = "str2" ]; then
+        echo "string are equal"
+else
+        echo "strings are not equal"
+
+fi
+
+
+
+f) Reversing a string
+==>
+$ echo helloooo | rev
+===========================================================================
+
+Q3)Write a shell script to rename all files in the current directory with 
+numeric continuous value(Warning: Do this in a personal folder. Don't use Home directory)
+==>
+for((i=1;i<10;i++))
+do
+        mv a$i abcd$i
+done
+
+=========================================================================================
+
+Q4)Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,
+$LOGNAME,$TERM)
+==>
+$ echo $HOME,echo $PATH,echo $SHELL,echo $HISTORY,echo $LOGNAME,echo $TERM
+
+=========================================================================================
+ Q5)Write a shell script to print all files permissions in current directory(Not name 
+or other details)(Use cut commands)
+==>
+$ ls -la | cut -c 1-10
+
+$ ls -la | cut -b 1-10
+=========================================================================================
+Q6)Write a shell script to print all files permissions and name of file
+==>
+$ ls -l | awk '{print $1,$9}'
+
+=========================================================================================
+Q7)Write a shell script to print all files name and size greater than 5K
+==>>
+
+find -type f -name "*.sh" -size +5k -ls
+===========================================================================================
+===========================================================================================
+
+1. Write a script To check given year is leap or not.
+==>
+
+echo "enter year"
+ read yr
+if [ $(( $yr % 4 )) = 0 ]; then
+	if [  $(( $yr % 100 )) = 0 ]; then
+                if [ $(( $yr % 400 )) = 0 ]; then
+                        echo "leap yr"
+                else
+                        echo "non leap yr"
+                fi
+        else
+                echo " leap year"
+        fi
+else
+        echo "non leap yr"
+fi
+============================================================================================
+2. Write a script to print day of the week using
+	a) elif	b) case 
+
+==>
+echo "eneter number between 1 to 7"
+read num
+        case $num in
+                1) echo "sunday" ;;
+                2) echo "monday" ;;
+                3) echo "tuesday" ;;
+                4) echo "wednesday" ;;
+                5) echo "thursday" ;;
+                6) echo "friday" ;;
+                7) echo "saturday" ;;
+        esac:
+============================================================================================
+
+3. a) Write a script to find biggest of three no.s
+
+==>
+echo "enter 3 number"
+read num1
+read num2
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]; then
+        echo "$num1 is greater number"
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]; then
+        echo "$num2 is greater number"
+else
+        echo "$num3 is greater number"
+fi
+
+
+   b) To find avg of 3 no.s, read no.s from keyboard
+==>
+echo "enter 3 numbers"
+read num1
+read num2
+read num3
+
+sum=$(( $num1 + $num2 + $num3 ))
+echo "sum=$sum"
+
+avgg=$(($sum / 3 ))
+echo "average=$avgg"
+
+============================================================================================
+4. Write a program to check wahether given no.is even or odd
+==>
+echo "enter a number"
+read num
+if [ $(($num % 2 )) -eq 0 ]; then
+        echo "even number"
+else
+        echo "odd number"
+fi
+============================================================================================
+5. Write a program to print calendar of current month in next year,previous years.
+	For eg:-sep 2014,sep 2012 if current month is sep 2013	
+==>
+
+=============================================================================================
+6. Write a program to find sum and product of two no.s using 
+	a) let 
+	b)expr
+	c)bc	
+==>
+a) let:
+  ANS:
+    a=10
+    b=20
+    sum=$(( $a + $b ))
+    echo $sum
+
+ b) expr:
+  ANS:
+    echo "Enter two numbers"
+    read num1 num2
+    sum = 'expr $num1 + $num2'
+    echo "The sum is = $sum"
+
+c) bc:
+   ANS:$ echo 'scale=4;10+20' | bc
+=============================================================================================
+7. Write a script to generate Fibonacci series.
+==>
+=============================================================================================
+
+8. Write a shell script to reverse the single strings. 
+==>
+echo "enter string"
+read str
+echo $str | rev
+
+=============================================================================================
+9.Write a shell script to reverse the list of strings and reverse each string further in the list.
+==>
+
+
+==============================================================================================
+10. Write a shell script to print the reverse of an input number.
+==>
+echo "enter a number"
+read num
+echo $num | rev   
+==========================================================================================
